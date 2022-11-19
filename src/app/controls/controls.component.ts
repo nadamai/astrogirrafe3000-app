@@ -1,5 +1,6 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { HelperService } from '../helper.service';
 
 @Component({
   selector: 'app-controls',
@@ -16,7 +17,8 @@ export class ControlsComponent implements OnInit {
   public joystickY: number = 0;
 
   constructor(
-    public sanitizer: DomSanitizer
+    public sanitizer: DomSanitizer,
+    private helper: HelperService
   ) {};
 
   ngOnInit() {
@@ -34,11 +36,37 @@ export class ControlsComponent implements OnInit {
     const x = e.touches[0].clientX;
     const y = e.touches[0].clientY;
 
-    const radius = ((document.querySelector('app-controls > *') as HTMLElement).offsetHeight - (document.querySelector('app-joystick > *') as HTMLElement).offsetHeight) / 2;
+    const controls = document.querySelector('app-controls > *') as HTMLElement;
+    const joystick = document.querySelector('app-joystick > *') as HTMLElement;
+
+    const radius = (controls.offsetHeight - (joystick).offsetHeight) / 2;
     const joystickX = -1 * (this.touchStartX - x);
     const joystickY = -1 * (this.touchStartY - y);
 
     if (Math.sqrt(Math.pow(joystickX, 2) + Math.pow(joystickY, 2)) > radius) {
+      const controlsCenterX = controls.offsetLeft + (controls.offsetWidth / 2);
+      const controlsCenterY = controls.offsetTop + (controls.offsetHeight / 2);
+
+      if (controlsCenterX === x) {
+        this.joystickX = x;
+
+        if (y < controlsCenterY) {
+          this.joystickY = controlsCenterY - radius;
+
+          return;
+        }
+
+        this.joystickY = controlsCenterY + radius;
+
+        return;
+      }
+
+      const parameters = this.helper.linearFunctionParameters(controlsCenterX, controlsCenterY, x, y);
+      const angle = -1 / Math.tan(parameters[0]);
+
+      this.joystickX = radius * Math.sin(angle);
+      this.joystickY = radius * Math.cos(angle);
+
       return;
     }
 

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HelperService } from './helper.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,11 @@ export class PlayerService {
 
   private animationInterval: number = 20;
 
-  constructor() { }
+  constructor(
+    private helpers: HelperService
+  ) { }
 
   public face(direction) {
-    console.log(direction);
-
     this.direction = (direction === 'right') ? 1 : -1;
   }
 
@@ -67,14 +68,7 @@ export class PlayerService {
       this.face('left');
     }
 
-    const linearFunctionParameters = (x1, y1, x2, y2) => {
-      const a = (y1 - y2) / (x1 - x2);
-      const b = y1 - x1 * ((y1 - y2) / (x1 - x2));
-
-      return [a, b];
-    }
-
-    const parameters = linearFunctionParameters(oldX, oldY, newX, newY);
+    const parameters = this.helpers.linearFunctionParameters(oldX, oldY, newX, newY);
 
     const movement = setInterval(() => {
       if (progress >= steps) {
