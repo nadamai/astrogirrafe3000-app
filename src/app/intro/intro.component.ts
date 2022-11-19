@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-intro',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./intro.component.scss']
 })
 export class IntroComponent implements OnInit {
+  @HostBinding('class.start') start: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
-  }
+    setTimeout(() => {
+      this.start = true;
+    }, 1)
 
+  }
 }
