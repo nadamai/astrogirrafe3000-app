@@ -8,6 +8,8 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 export class IntroComponent implements OnInit {
   @HostBinding('class.start') start: boolean = false;
 
+  Arr = Array;
+
   constructor() { }
 
   ngOnInit() {

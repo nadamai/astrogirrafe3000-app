@@ -1,4 +1,6 @@
 :host {
+  pointer-events: none;
+
   &.start {
     #intro {
       top: 0;
@@ -11,6 +13,6 @@
     background: linear-gradient(180deg, rgba(0, 0, 2, 1) 0%, rgba(2,0,36,1) 33%, rgba(9,9,121,1) 66%, rgba(0,212,255,1) 100%);
     position: relative;
     top: -400vh;
-    transition: top 10s ease-out;
+    transition: top 40s ease-out;
   }
 }
