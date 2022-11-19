@@ -1,3 +1,9 @@
 <div id="controls">
-  <app-joystick></app-joystick>
+  <app-joystick
+    (touchstart)="touchstart($event)"
+    (touchmove)="touchmove($event)"
+    (touchend)="touchend($event)"
+    (touchcancel)="touchcancel($event)"
+    [style.transform]="getJoystickTransform()"
+  ></app-joystick>
 </div>

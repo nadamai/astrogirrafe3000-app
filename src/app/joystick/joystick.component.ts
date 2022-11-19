@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Host, OnInit } from '@angular/core';
+import { ControlsComponent } from '../controls/controls.component';
 
 @Component({
   selector: 'app-joystick',
@@ -7,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JoystickComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  constructor(
+    @Host() public controls: ControlsComponent
+  ) { }
 }
