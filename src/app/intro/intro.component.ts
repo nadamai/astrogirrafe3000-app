@@ -15,8 +15,6 @@ export class IntroComponent implements OnInit {
 
   private giraffeInterval: any;
 
-  Arr = Array;
-
   constructor(
     public player: PlayerService,
     public game: GameService

@@ -10,6 +10,8 @@ import { TextComponent } from './text/text.component';
 import { HeroComponent } from './hero/hero.component';
 import { TitleComponent } from './title/title.component';
 import { StarMovingComponent } from './star-moving/star-moving.component';
+import { GameplayComponent } from './gameplay/gameplay.component';
+import { StarGameplayComponent } from './star-gameplay/star-gameplay.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { StarMovingComponent } from './star-moving/star-moving.component';
     TextComponent,
     HeroComponent,
     TitleComponent,
-    StarMovingComponent
+    StarMovingComponent,
+    GameplayComponent,
+    StarGameplayComponent
   ],
   imports: [
     BrowserModule,

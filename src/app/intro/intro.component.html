@@ -22,7 +22,7 @@
     ></app-text>
   </div>
 
-  <app-star *ngFor="let i of Arr(200).fill(1)" height="500" gradient="true"></app-star>
+  <app-star *ngFor="let i of helper.range(200)" height="500" gradient="true"></app-star>
 
   <div id="skip" [class.visible]="skip" (click)="skipIntro()">
     skip

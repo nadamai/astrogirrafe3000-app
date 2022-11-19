@@ -1,0 +1,16 @@
+<div id="gameplay">
+
+  <div id="stars-1" class="stars" [style.transition]="starsTransition" [style.top]="starsTop">
+    <app-star-gameplay *ngFor="let i of helper.range(100)"></app-star-gameplay>
+  </div>
+
+  <div id="stars-2" class="stars" [style.transition]="stars2Transition" [style.top]="stars2Top">
+    <app-star-gameplay *ngFor="let i of helper.range(100)"></app-star-gameplay>
+  </div>
+</div>
+
+
+
+
+
+

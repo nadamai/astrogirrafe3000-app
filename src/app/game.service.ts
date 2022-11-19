@@ -8,6 +8,6 @@ export class GameService {
   public stage: string = 'title';
 
   play() {
-
+    this.stage = 'gameplay';
   }
 }

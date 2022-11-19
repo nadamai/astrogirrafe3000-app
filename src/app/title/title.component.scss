@@ -8,13 +8,18 @@
       transform: translateX(-100vw);
     }
 
-    img {
+    img,
+    app-star-moving {
       opacity: 0;
     }
 
     .cta {
       transform: translateX(100vw);
     }
+  }
+
+  app-star-moving {
+    opacity: 1;
   }
 
   #title {
