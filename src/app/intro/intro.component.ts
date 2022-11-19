@@ -1,4 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-intro',
@@ -11,6 +12,13 @@ export class IntroComponent implements OnInit {
   public phase: number = 0;
 
   Arr = Array;
+
+  constructor(
+    public player: PlayerService
+  ) {
+    this.player.x = 80;
+    this.player.y = 80;
+  }
 
   ngOnInit() {
     setTimeout(() => {

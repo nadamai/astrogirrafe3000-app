@@ -1,4 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-viewport',
@@ -8,7 +9,9 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 export class ViewportComponent implements OnInit {
   @HostBinding('class.active') active: boolean = false;
 
-  constructor() { }
+  constructor(
+    public player: PlayerService
+  ) { }
 
   ngOnInit() {
     setTimeout(() => {

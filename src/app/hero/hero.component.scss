@@ -1,6 +1,7 @@
 :host {
   transform: rotate(180deg);
   position: fixed;
+  z-index: 10;
 
   #acceleration {
     width: 15vw;
