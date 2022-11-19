@@ -28,7 +28,7 @@ export class GameplayComponent implements OnInit {
       this.active = true;
 
       this.starsAnimation();
-    })
+    }, 50);
   }
 
   starsAnimation(): void {
@@ -56,5 +56,13 @@ export class GameplayComponent implements OnInit {
         }, this.delta);
       }, this.starsSpeed * 1000)
     }, this.delta);
+
+
+
+    setTimeout(() => {
+      console.error('speedchange');
+
+      this.starsSpeed = 1.9
+    }, 5000);
   }
 }

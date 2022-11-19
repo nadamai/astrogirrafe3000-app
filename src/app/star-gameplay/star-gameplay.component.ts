@@ -18,5 +18,4 @@ export class StarGameplayComponent implements OnInit {
 
     this.transform = 'scale(' + (0.2 + Math.random()) + ')';
   }
-
 }
