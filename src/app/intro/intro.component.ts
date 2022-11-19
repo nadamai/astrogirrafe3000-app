@@ -7,7 +7,7 @@ import { PlayerService } from '../player.service';
   templateUrl: './intro.component.html',
   styleUrls: ['./intro.component.scss']
 })
-export class IntroComponent implements OnInit, AfterViewInit {
+export class IntroComponent implements OnInit {
   @HostBinding('class.start') start: boolean = false;
 
   public skip: boolean = false;
@@ -47,13 +47,6 @@ export class IntroComponent implements OnInit, AfterViewInit {
         }, 13500)
       }, 3000)
     }, 1)
-  }
-
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.player.x = 80;
-      this.player.y = 110;
-    })
   }
 
   triggerTheGiraffe() {

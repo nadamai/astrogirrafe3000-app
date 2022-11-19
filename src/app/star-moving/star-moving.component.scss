@@ -1,0 +1,12 @@
+:host {
+  width: .5vw;
+  height: .5vw;
+  background: #e2f8ff;
+  border-radius: 100%;
+  position: absolute;
+  transform: translate(0, 0) scale(0);
+
+  &.animation {
+    transition: transform 3s linear;
+  }
+}

@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 
 export class PlayerService {
-  public x: number = 0;
-  public y: number = 0;
+  public x: number = 80;
+  public y: number = 110;
   public rotation: number = 0;
 
   constructor() { }
