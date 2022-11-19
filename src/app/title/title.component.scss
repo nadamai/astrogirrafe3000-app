@@ -1,9 +1,7 @@
 :host {
   pointer-events: none;
-  opacity: 0;
-  transition: opacity .2s;
 
-  &.active {
+  &.active #title {
     opacity: 1;
   }
 
@@ -11,6 +9,8 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 4);
+    opacity: 0;
+    transition: opacity .2s;
   }
 
   #title-screen {
@@ -42,8 +42,9 @@
 
     img {
       width: 90vw;
+      height: 75vw;
       position: relative;
-      right: -5vw;
+      right: -5.5vw;
     }
 
     .cta {
