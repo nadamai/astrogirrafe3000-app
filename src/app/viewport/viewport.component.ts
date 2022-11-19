@@ -1,4 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { GameService } from '../game.service';
 import { PlayerService } from '../player.service';
 
@@ -12,12 +13,17 @@ export class ViewportComponent implements OnInit {
 
   constructor(
     public player: PlayerService,
-    public game: GameService
+    public game: GameService,
+    public sanitizer: DomSanitizer
   ) { }
 
   ngOnInit() {
     setTimeout(() => {
       this.active = true;
     }, 1000)
+  }
+
+  getHeroTransform() {
+    return this.sanitizer.bypassSecurityTrustStyle('rotate(' + this.player.rotation + 'deg) scaleX(' + (this.player.direction * 100) + '%)');
   }
 }

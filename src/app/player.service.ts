@@ -8,10 +8,17 @@ export class PlayerService {
   public x: number = 80;
   public y: number = 110;
   public rotation: number = 0;
+  public direction: number = 1;
 
   private animationInterval: number = 20;
 
   constructor() { }
+
+  public face(direction) {
+    console.log(direction);
+
+    this.direction = (direction === 'right') ? 1 : -1;
+  }
 
   public moveTo(newX, newY, time) {
     let progress = 0;
@@ -46,6 +53,12 @@ export class PlayerService {
       }, this.animationInterval)
 
       return;
+    }
+
+    if (oldX < newX) {
+      this.face('right');
+    } else {
+      this.face('left');
     }
 
     const linearFunctionParameters = (x1, y1, x2, y2) => {
