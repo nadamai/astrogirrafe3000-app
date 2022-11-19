@@ -13,6 +13,7 @@ import { StarMovingComponent } from './star-moving/star-moving.component';
 import { GameplayComponent } from './gameplay/gameplay.component';
 import { StarGameplayComponent } from './star-gameplay/star-gameplay.component';
 import { ControlsComponent } from './controls/controls.component';
+import { JoystickComponent } from './joystick/joystick.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ControlsComponent } from './controls/controls.component';
     StarMovingComponent,
     GameplayComponent,
     StarGameplayComponent,
-    ControlsComponent
+    ControlsComponent,
+    JoystickComponent
   ],
   imports: [
     BrowserModule,
