@@ -62,10 +62,21 @@ export class ControlsComponent implements OnInit {
       }
 
       const parameters = this.helper.linearFunctionParameters(controlsCenterX, controlsCenterY, x, y);
-      const angle = -1 / Math.tan(parameters[0]);
+      const angle = Math.atan(parameters[0]);
 
-      this.joystickX = radius * Math.sin(angle);
-      this.joystickY = radius * Math.cos(angle);
+      if (x <= controlsCenterX && y > controlsCenterY) {
+        this.joystickX = radius * Math.sin(-1 * angle - (Math.PI / 2));
+        this.joystickY = radius * Math.cos(-1 * angle - (Math.PI / 2));
+      } else if (x <= controlsCenterX && y <= controlsCenterY) {
+        this.joystickX = radius * Math.sin(-1 * angle - (Math.PI / 2));
+        this.joystickY = radius * Math.cos(-1 * angle - (Math.PI / 2));
+      } else if (x > controlsCenterX && y > controlsCenterY) {
+        this.joystickX = radius * Math.sin(-1 * angle + (Math.PI / 2));
+        this.joystickY = radius * Math.cos(-1 * angle + (Math.PI / 2));
+      } else {
+        this.joystickX = radius * Math.sin(-1 * angle + (Math.PI / 2));
+        this.joystickY = radius * Math.cos(-1 * angle + (Math.PI / 2));
+      }
 
       return;
     }
