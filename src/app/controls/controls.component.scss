@@ -1,0 +1,44 @@
+:host {
+  &.active #controls{
+    animation: pop-in .7s;
+    animation-fill-mode: forwards;
+  }
+
+  #controls {
+    width: 22vw;
+    height: 22vw;
+    border-radius: 100%;
+    border: .4vw solid #000;
+    background-color: #f5b350;
+    position: fixed;
+    z-index: 100;
+    bottom: 5vw;
+    right: 5vw;
+    transform: scale(0);
+
+
+
+    // #a06a44
+  }
+
+  @keyframes pop-in {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: .8;
+    }
+    75% {
+      transform: scale(0.9);
+    }
+    85% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+      opacity: .8
+    }
+  }
+}

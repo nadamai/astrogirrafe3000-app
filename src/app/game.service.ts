@@ -7,6 +7,7 @@ import { PlayerService } from './player.service';
 
 export class GameService {
   public stage: string = 'gameplay';
+  public controls: boolean = false;
 
   constructor(
     public player: PlayerService
@@ -23,6 +24,14 @@ export class GameService {
     this.player.y = 110;
     this.player.rotation = 180;
 
-    this.player.moveTo(this.player.x, 87.5, 5000)
+    this.player.moveTo(this.player.x, 80, 5000, () => {
+      setTimeout(() => {
+        this.showControls();
+      }, 200);
+    })
+  }
+
+  showControls() {
+    this.controls = true;
   }
 }

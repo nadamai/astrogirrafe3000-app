@@ -20,7 +20,7 @@ export class PlayerService {
     this.direction = (direction === 'right') ? 1 : -1;
   }
 
-  public moveTo(newX, newY, time) {
+  public moveTo(newX, newY, time, callback) {
     let progress = 0;
 
     const oldX = this.x;
@@ -42,6 +42,12 @@ export class PlayerService {
           this.y = newY;
 
           clearInterval(movement);
+
+          if (typeof callback === 'undefined') {
+            return;
+          }
+
+          callback();
 
           return;
         }
@@ -76,6 +82,12 @@ export class PlayerService {
         this.y = newY;
 
         clearInterval(movement);
+
+        if (typeof callback === 'undefined') {
+          return;
+        }
+
+        callback();
 
         return;
       }
