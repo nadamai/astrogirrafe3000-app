@@ -8,14 +8,21 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 export class IntroComponent implements OnInit {
   @HostBinding('class.start') start: boolean = false;
 
-  Arr = Array;
+  public phase: number = 0;
 
-  constructor() { }
+  Arr = Array;
 
   ngOnInit() {
     setTimeout(() => {
       this.start = true;
-    }, 1)
 
+      setTimeout(() => {
+        this.phase = 1;
+      }, 3000)
+
+      setTimeout(() => {
+        this.phase = 2;
+      }, 16500)
+    }, 1)
   }
 }

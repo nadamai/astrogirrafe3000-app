@@ -1,6 +1,21 @@
 <div id="intro">
   <div id="text">
-    <app-text value="Once upon a time the human race has evolved into their post-human form and finally left the planet Earth." delay="5"></app-text>
+    <app-text value="Once upon a time the human race has evolved into their posthuman form and finally left the planet Earth."
+              *ngIf="phase === 1"
+    ></app-text>
+
+    <app-text value="Their place was taken by the obvious one..."
+              visible="50"
+              *ngIf="phase === 2"
+    ></app-text>
+
+    <app-text class="giraffe"
+              value="THE GIRAFFE"
+              delay="5"
+              interval="150"
+              visible="50"
+              *ngIf="phase === 2"
+    ></app-text>
   </div>
 
   <app-star *ngFor="let i of Arr(200).fill(1)"></app-star>

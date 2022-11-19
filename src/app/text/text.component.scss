@@ -1,0 +1,26 @@
+::ng-deep {
+  .letter {
+    opacity: 0;
+    transition: opacity .08s;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
+}
+
+:host {
+  transition: opacity 3s ease-out;
+
+  &.giraffe {
+    color: #f2bd04;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &.finished {
+    opacity: 0;
+  }
+}

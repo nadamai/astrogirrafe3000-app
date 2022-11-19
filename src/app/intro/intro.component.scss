@@ -8,7 +8,7 @@
   }
 
   #intro {
-    width: 100vw;
+    width: 100%;
     height: 500vh;
     background: linear-gradient(180deg, rgba(0, 0, 2, 1) 0%, rgba(2,0,36,1) 33%, rgba(9,9,121,1) 66%, rgba(0,212,255,1) 100%);
     position: relative;
@@ -20,9 +20,9 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background: #f006;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
     top: 0;
     padding: 10vw;
