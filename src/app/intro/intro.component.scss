@@ -1,6 +1,4 @@
 :host {
-  pointer-events: none;
-
   &.start {
     #intro {
       top: 0;
@@ -27,5 +25,19 @@
     top: 0;
     padding: 10vw;
     z-index: 30;
+  }
+
+  #skip {
+    opacity: 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 5vw;
+    z-index: 30;
+    transition: opacity .3s;
+
+    &.visible {
+      opacity: .5
+    }
   }
 }

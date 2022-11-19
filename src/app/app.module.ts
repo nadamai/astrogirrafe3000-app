@@ -8,6 +8,7 @@ import { IntroComponent } from './intro/intro.component';
 import { StarComponent } from './star/star.component';
 import { TextComponent } from './text/text.component';
 import { HeroComponent } from './hero/hero.component';
+import { TitleComponent } from './title/title.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HeroComponent } from './hero/hero.component';
     IntroComponent,
     StarComponent,
     TextComponent,
-    HeroComponent
+    HeroComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
 import { PlayerService } from '../player.service';
 
 @Component({
@@ -10,7 +11,8 @@ export class ViewportComponent implements OnInit {
   @HostBinding('class.active') active: boolean = false;
 
   constructor(
-    public player: PlayerService
+    public player: PlayerService,
+    public game: GameService
   ) { }
 
   ngOnInit() {
