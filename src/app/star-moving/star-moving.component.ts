@@ -16,8 +16,8 @@ export class StarMovingComponent implements OnInit {
   @Input() index: number = 0;
 
   private delay: number = 10;
-  private speed: number = 1000;
-  private delta: number = 100;
+  private speed: number = 1500;
+  private delta: number = 50;
 
   constructor(
     private sanitizer: DomSanitizer

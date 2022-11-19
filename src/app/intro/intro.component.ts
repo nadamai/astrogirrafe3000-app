@@ -63,8 +63,6 @@ export class IntroComponent implements OnInit {
   }
 
   skipIntro() {
-    console.log('skip');
-
     clearInterval(this.giraffeInterval);
 
     this.game.stage = 'title';

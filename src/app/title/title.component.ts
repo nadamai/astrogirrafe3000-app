@@ -15,6 +15,6 @@ export class TitleComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.active = true;
-    }, 200);
+    }, 300);
   }
 }
