@@ -1,4 +1,4 @@
-import { Component, Host, OnInit } from '@angular/core';
+import { Component, Host } from '@angular/core';
 import { ControlsComponent } from '../controls/controls.component';
 
 @Component({
@@ -6,7 +6,7 @@ import { ControlsComponent } from '../controls/controls.component';
   templateUrl: './joystick.component.html',
   styleUrls: ['./joystick.component.scss']
 })
-export class JoystickComponent implements OnInit {
+export class JoystickComponent {
 
   constructor(
     @Host() public controls: ControlsComponent

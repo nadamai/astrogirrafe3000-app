@@ -35,12 +35,10 @@ export class ControlsComponent implements OnInit {
     const y = e.touches[0].clientY;
 
     const radius = ((document.querySelector('app-controls > *') as HTMLElement).offsetHeight - (document.querySelector('app-joystick > *') as HTMLElement).offsetHeight) / 2;
-    console.log(radius);
-
     const joystickX = -1 * (this.touchStartX - x);
     const joystickY = -1 * (this.touchStartY - y);
 
-    if (Math.abs(joystickX) > radius || Math.abs(joystickY) > radius) {
+    if (Math.sqrt(Math.pow(joystickX, 2) + Math.pow(joystickY, 2)) > radius) {
       return;
     }
 
