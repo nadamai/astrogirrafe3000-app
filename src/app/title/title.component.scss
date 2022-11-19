@@ -1,7 +1,7 @@
 :host {
   pointer-events: none;
   opacity: 0;
-  transition: opacity .15s;
+  transition: opacity .2s;
 
   &.active {
     opacity: 1;
@@ -10,22 +10,24 @@
   #title {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 3);
+    background: rgba(0, 0, 4);
   }
 
   #title-screen {
     width: 100%;
     height: 100%;
-    padding: 5vw;
+    padding: 10vw 5vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 
     h1 {
+      color: #f6b953;
       font-size: 10vw;
       font-weight: 800;
       text-align: center;
+      margin: 0;
 
       div {
         &:nth-child(2) {
@@ -38,7 +40,14 @@
       }
     }
 
+    img {
+      width: 90vw;
+      position: relative;
+      right: -5vw;
+    }
+
     .cta {
+      font-weight: 800;
       background-color: #f6b953;
       height: 48px;
       border-radius: 48px;
@@ -47,6 +56,17 @@
       justify-content: center;
       padding: 0 10vw;
       z-index: 10;
+      animation: play-now 1s infinite;
+
+      @keyframes play-now {
+        0%, 50% {
+          color: #fff;
+        }
+
+        51%, 100% {
+          color: transparent;
+        }
+      }
     }
   }
 }
