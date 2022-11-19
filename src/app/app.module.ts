@@ -7,6 +7,7 @@ import { ViewportComponent } from './viewport/viewport.component';
 import { IntroComponent } from './intro/intro.component';
 import { StarComponent } from './star/star.component';
 import { TextComponent } from './text/text.component';
+import { HeroComponent } from './hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TextComponent } from './text/text.component';
     ViewportComponent,
     IntroComponent,
     StarComponent,
-    TextComponent
+    TextComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,

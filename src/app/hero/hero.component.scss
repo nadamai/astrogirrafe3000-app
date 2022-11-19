@@ -1,0 +1,34 @@
+:host {
+  transform: rotate(180deg);
+  position: fixed;
+
+  #acceleration {
+    width: 15vw;
+    height: 15vw;
+    background: url(~src/assets/img/fire.png) center center no-repeat;
+    background-size: contain;
+    position: relative;
+    animation: acceleration .1s infinite;
+    transform-origin: 50% 100%;
+    mix-blend-mode: multiply;
+
+    @keyframes acceleration {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  #giraffe {
+    width: 15vw;
+    height: 15vw;
+    background: url(~src/assets/img/giraffe.png) center center no-repeat;
+    background-size: contain;
+    transform: rotate(180deg) translate(-0.5vw, -25vw);
+    position: relative;
+    z-index: 5;
+  }
+}
