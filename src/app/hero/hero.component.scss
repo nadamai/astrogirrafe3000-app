@@ -3,6 +3,18 @@
   position: fixed;
   z-index: 10;
 
+  &:after {
+    width: 15vw;
+    height: 15vw;
+    content: '';
+    background: #f2721c;
+    border-radius: 100%;
+    position: absolute;
+    top: 14vw;
+    z-index: 15;
+    filter: blur(11vw);
+  }
+
   #acceleration {
     width: 15vw;
     height: 15vw;

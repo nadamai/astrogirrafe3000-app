@@ -17,7 +17,7 @@ export class IntroComponent implements OnInit {
     public player: PlayerService
   ) {
     this.player.x = 80;
-    this.player.y = 80;
+    this.player.y = 110;
   }
 
   ngOnInit() {
@@ -26,11 +26,28 @@ export class IntroComponent implements OnInit {
 
       setTimeout(() => {
         this.phase = 1;
-      }, 3000)
 
-      setTimeout(() => {
-        this.phase = 2;
-      }, 16500)
+        setTimeout(() => {
+          this.phase = 2;
+
+          setTimeout(() => {
+            this.triggerTheGiraffe();
+
+            setTimeout(() => {
+              this.phase = 3;
+            }, 5000)
+          }, 7000)
+        }, 13500)
+      }, 3000)
     }, 1)
+  }
+
+  triggerTheGiraffe() {
+    this.player.rotation = 170;
+
+    const giraffeInterval = setInterval(() => {
+      this.player.x -= 0.05;
+      this.player.y -= 0.15;
+    }, 10);
   }
 }

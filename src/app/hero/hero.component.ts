@@ -6,6 +6,7 @@ import { Component, HostBinding, Input, OnInit } from '@angular/core';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent {
-  @HostBinding('style.top') @Input() y: string;
-  @HostBinding('style.left') @Input() x: string;
+  @HostBinding('style.top') @Input() top: string;
+  @HostBinding('style.left') @Input() left: string;
+  @HostBinding('style.transform') @Input() transform: string;
 }

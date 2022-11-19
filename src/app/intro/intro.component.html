@@ -5,7 +5,7 @@
     ></app-text>
 
     <app-text value="Their place was taken by the obvious one..."
-              visible="50"
+              visible="5"
               *ngIf="phase === 2"
     ></app-text>
 
@@ -13,8 +13,12 @@
               value="THE GIRAFFE"
               delay="5"
               interval="150"
-              visible="50"
+              visible="2"
               *ngIf="phase === 2"
+    ></app-text>
+
+    <app-text value="With their long necks they were the only ones able to reach the stars."
+              *ngIf="phase === 3"
     ></app-text>
   </div>
 
