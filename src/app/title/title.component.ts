@@ -1,4 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-title',
@@ -7,14 +8,23 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 })
 export class TitleComponent implements OnInit {
   @HostBinding('class.active') active = false;
+  @HostBinding('class.closing') closing = false;
 
   Arr = Array;
 
-  constructor() { }
+  constructor(
+    public game: GameService
+  ) { }
 
   ngOnInit() {
     setTimeout(() => {
       this.active = true;
     }, 300);
+  }
+
+  play() {
+    console.log('play');
+    this.closing = true;
+    this.game.play();
   }
 }

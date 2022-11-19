@@ -1,4 +1,4 @@
-<div id="title">
+<div id="title" [class.closing]="closing">
   <div id="title-screen">
     <h1>
       <div>ASTRO</div>
@@ -8,7 +8,7 @@
 
     <img src="assets/img/title.svg">
 
-    <div class="cta">PLAY NOW</div>
+    <div class="cta" (click)="play()">PLAY NOW</div>
   </div>
 
   <app-star-moving *ngFor="let i of Arr(400).fill(1); let index = index" [index]="index"></app-star-moving>

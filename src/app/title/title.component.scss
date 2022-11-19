@@ -1,8 +1,20 @@
 :host {
-  pointer-events: none;
-
   &.active #title {
     opacity: 1;
+  }
+
+  &.closing #title {
+    h1 {
+      transform: translateX(-100vw);
+    }
+
+    img {
+      opacity: 0;
+    }
+
+    .cta {
+      transform: translateX(100vw);
+    }
   }
 
   #title {
@@ -28,6 +40,8 @@
       font-weight: 800;
       text-align: center;
       margin: 0;
+      transition: transform .5s;
+      pointer-events: none;
 
       div {
         &:nth-child(2) {
@@ -45,6 +59,8 @@
       height: 75vw;
       position: relative;
       right: -5.5vw;
+      pointer-events: none;
+      transition: opacity .5s;
     }
 
     .cta {
@@ -58,6 +74,7 @@
       padding: 0 10vw;
       z-index: 10;
       animation: play-now 1s infinite;
+      transition: transform .5s;
 
       @keyframes play-now {
         0%, 50% {

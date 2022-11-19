@@ -5,7 +5,9 @@ import { Injectable } from '@angular/core';
 })
 
 export class GameService {
-  public stage: string = 'intro';
+  public stage: string = 'title';
 
-  constructor() { }
+  play() {
+
+  }
 }
