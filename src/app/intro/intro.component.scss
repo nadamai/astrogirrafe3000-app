@@ -15,4 +15,16 @@
     top: -400vh;
     transition: top 40s ease-out;
   }
+
+  #text {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #f006;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    padding: 10vw;
+  }
 }

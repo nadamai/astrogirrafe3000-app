@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-star',
@@ -16,9 +16,7 @@ export class StarComponent {
 
     this.top = top + 'vh';
     this.left = Math.floor(Math.random() * 100) + 'vw';
-    this.opacity = Math.max(0, -(1.8) * (top / 500) + 1);
-
-    console.log( top, this.opacity );
+    this.opacity = Math.max(0, -(1.7) * (top / 500) + 1);
 
     this.transform = 'scale(' + (0.2 + Math.random() * 1) + ')';
   }

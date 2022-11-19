@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ViewportComponent } from './viewport/viewport.component';
 import { IntroComponent } from './intro/intro.component';
 import { StarComponent } from './star/star.component';
+import { TextComponent } from './text/text.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewportComponent,
     IntroComponent,
-    StarComponent
+    StarComponent,
+    TextComponent
   ],
   imports: [
     BrowserModule,
