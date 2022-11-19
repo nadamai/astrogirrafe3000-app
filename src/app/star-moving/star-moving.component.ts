@@ -16,7 +16,7 @@ export class StarMovingComponent implements OnInit {
   @Input() index: number = 0;
 
   private delay: number = 10;
-  private speed: number = 3000;
+  private speed: number = 1000;
   private delta: number = 100;
 
   constructor(
@@ -25,7 +25,7 @@ export class StarMovingComponent implements OnInit {
 
   ngOnInit() {
     const angle = Math.random() * 2 * Math.PI;
-    const radius = 200;
+    const radius = 150;
 
     const x = radius * Math.sin(angle);
     const y = radius * Math.cos(angle);
