@@ -34,12 +34,20 @@ export class IntroComponent implements OnInit {
           this.phase = 2;
 
           setTimeout(() => {
+            if (this.game.stage !== 'intro') {
+              return;
+            }
+
             this.triggerTheGiraffe();
 
             setTimeout(() => {
               this.phase = 3;
 
               setTimeout(() => {
+                if (this.game.stage !== 'intro') {
+                  return;
+                }
+
                 this.skipIntro();
               }, 11000)
             }, 5000)

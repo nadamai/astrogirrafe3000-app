@@ -17,6 +17,7 @@ import { JoystickComponent } from './joystick/joystick.component';
 import { AsteroidComponent } from './asteroid/asteroid.component';
 import { ScoreComponent } from './score/score.component';
 import { GameoverComponent } from './gameover/gameover.component';
+import { HpComponent } from './hp/hp.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { GameoverComponent } from './gameover/gameover.component';
     JoystickComponent,
     AsteroidComponent,
     ScoreComponent,
-    GameoverComponent
+    GameoverComponent,
+    HpComponent
   ],
   imports: [
     BrowserModule,
