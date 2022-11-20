@@ -8,7 +8,11 @@
     height: 100%;
     background: rgba(0,0,4);
     opacity: 0;
-    transition: opacity 2s;
+    transition: opacity 2s, background .3s;
+
+    &.beam {
+      background: #fff;
+    }
 
     .stars {
       width: 100%;

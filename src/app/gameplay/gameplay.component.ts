@@ -11,8 +11,6 @@ import { PlayerService } from '../player.service';
 export class GameplayComponent implements OnInit {
   @HostBinding('class.active') active = false;
 
-  public asteroids: any[] = [];
-
   public starsTop: string = '-100vh';
   public stars2Top: string = '0';
   public starsTransition: string = 'top 2s linear';
@@ -75,7 +73,7 @@ export class GameplayComponent implements OnInit {
   }
 
   createAsteroid() {
-    this.asteroids.push(1);
+    this.game.asteroids.push(1);
 
     setTimeout(() => {
       this.createAsteroid();

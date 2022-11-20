@@ -8,7 +8,9 @@ import { PlayerService } from './player.service';
 export class GameService {
   public stage: string = 'intro';
   public controls: boolean = false;
+  public asteroids: any[] = [];
 
+  public beam: boolean = false;
   public highestScore: number|null = null;
   public score: number = 0;
   public hit: boolean = false;
@@ -84,5 +86,18 @@ export class GameService {
     }, 1000);
 
     clearInterval(this.scoreInterval);
+  }
+
+  special() {
+    if (this.player.sp < 99) {
+      return;
+    }
+
+    this.beam = true;
+
+    setTimeout(() => {
+      this.beam = false;
+      this.player.sp = 0;
+    }, 500);
   }
 }

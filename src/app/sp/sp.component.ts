@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
 import { PlayerService } from '../player.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { PlayerService } from '../player.service';
 export class SpComponent implements OnInit {
 
   constructor(
+    public game: GameService,
     public player: PlayerService
   ) { }
 

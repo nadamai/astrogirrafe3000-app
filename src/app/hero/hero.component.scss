@@ -47,6 +47,11 @@
     animation: acceleration .1s infinite;
     transform-origin: 50% 100%;
     mix-blend-mode: multiply;
+    transition: filter .3s;
+
+    &.blue {
+      filter: invert(1) brightness(1.5);
+    }
 
     @keyframes acceleration {
       0% {

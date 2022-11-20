@@ -1,5 +1,6 @@
 import { Component, HostBinding, Input } from '@angular/core';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
+import { GameService } from '../game.service';
 import { PlayerService } from '../player.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class HeroComponent {
 
   constructor(
     public player: PlayerService,
-    public sanitizer: DomSanitizer
+    public sanitizer: DomSanitizer,
+    public game: GameService
   ) { }
 
   getHeadTop() {
