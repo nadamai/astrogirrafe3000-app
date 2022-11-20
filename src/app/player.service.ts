@@ -7,6 +7,7 @@ import { HelperService } from './helper.service';
 
 export class PlayerService {
   public hp: number = 3;
+  public sp: number = 0;
   public length: number = 0;
 
   public size: number = 15;
@@ -22,7 +23,15 @@ export class PlayerService {
 
   constructor(
     private helpers: HelperService
-  ) { }
+  ) {
+    setInterval(() => {
+      if (this.sp >= 100) {
+        return;
+      }
+
+      this.sp += (Math.max(0, (this.length / 40) - 10));
+    }, 100);
+  }
 
   public face(direction) {
     this.direction = (direction === 'right') ? 1 : -1;

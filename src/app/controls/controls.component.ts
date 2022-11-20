@@ -100,8 +100,6 @@ export class ControlsComponent implements OnInit {
 
     this.joystickX = joystickX;
     this.joystickY = joystickY;
-
-    console.log();
   }
 
   touchend(e) {

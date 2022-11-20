@@ -9,9 +9,14 @@
     background-size: contain;
     position: relative;
     animation: asteroid-clockwise 3s linear infinite;
+    transition: opacity 1s;
 
     &.anticlockwise {
       animation: asteroid-anticlockwise 3s linear infinite;
+    }
+
+    &.harmless {
+      opacity: 0;
     }
   }
 

@@ -12,11 +12,11 @@ export class AsteroidComponent implements OnInit {
   @HostBinding('style.left') left: string = '50vw';
 
   public anticlockwise: boolean = true;
+  public harmless: boolean = false;
 
   private width: number = 14;
   private x: number = 50;
   private y: number = -14;
-  private harmless: boolean = false;
   private safezone: number = 5;
 
   private routeInterval: any;
@@ -40,7 +40,6 @@ export class AsteroidComponent implements OnInit {
         return;
       }
 
-      console.log(this.player.length);
       if (
         (this.y + this.width - this.safezone) >= this.player.y - (this.player.length + 2) &&
         (this.y + 2.5*this.safezone <= this.player.y + this.player.size) &&
