@@ -55,7 +55,7 @@ export class PlayerService {
 
     const length = this.length + (-1 * y * this.extendFactor);
 
-    if (length < 0 || length > 100) {
+    if (length < 0 || length > 50) {
       return;
     }
 

@@ -1,5 +1,5 @@
 import { Component, HostBinding, Input } from '@angular/core';
-import { SafeStyle } from '@angular/platform-browser';
+import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { PlayerService } from '../player.service';
 
 @Component({
@@ -15,15 +15,16 @@ export class HeroComponent {
   @Input() length: number = 0;
 
   constructor(
-    public player: PlayerService
+    public player: PlayerService,
+    public sanitizer: DomSanitizer
   ) { }
 
   getHeadTop() {
-    return (-0.5 - this.player.length) + 'vw';
+    return this.sanitizer.bypassSecurityTrustStyle('calc(-0.5vw - ' + this.player.length + 'vh)');
   }
 
   getNeckHeight() {
-    return (4.7 + this.player.length) + 'vw';
+    return this.sanitizer.bypassSecurityTrustStyle('calc(4.7vw + ' + this.player.length + 'vh)');
   }
 
 }
