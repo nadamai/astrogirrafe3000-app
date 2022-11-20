@@ -9,7 +9,7 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 export class StarMovingComponent implements OnInit {
   @HostBinding('style.top') public top: string = '50vh';
   @HostBinding('style.left') public left: string = '50vw';
-  @HostBinding('style.transform') public transform: SafeStyle;
+  @HostBinding('style.transform') public transform!: SafeStyle;
 
   @HostBinding('class.animation') public animation: boolean = false;
 
