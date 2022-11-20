@@ -4,8 +4,9 @@
     top: 5vw;
     left: 5vw;
     color: rgba(0,212,255,1);
-    transition: top 3s, opacity 2s;
+    transition: top 2s, opacity 1s;
     z-index: 30;
+    opacity: 1;
 
     &.skip {
       top: -5vh;
