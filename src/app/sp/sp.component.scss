@@ -8,6 +8,49 @@
   bottom: 5vw;
   z-index: 20;
 
+  &:before {
+    content: '';
+    width: 15vw;
+    height: 11vw;
+    background: #001a9f;
+    opacity: 0;
+    filter: blur(10vw);
+    position: fixed;
+    right: 12.5vw;
+    bottom: 11.5vw;
+    border-radius: 100%;
+    z-index: 19;
+    transition: opacity .5s;
+  }
+
+  &.level-1 {
+    &:before {
+      opacity: .4;
+    }
+  }
+
+  &.level-2 {
+    &:before {
+      background: #0024d7;
+      width: 17vw;
+      height: 13vw;
+      right: 11.5vw;
+      bottom: 10.5vw;
+      opacity: .5;
+    }
+  }
+
+  &.level-3 {
+    &:before {
+      background: #006fff;
+      width: 18vw;
+      height: 14vw;
+      right: 11vw;
+      bottom: 10vw;
+      opacity: .6;
+    }
+  }
+
   #value {
     height: 100%;
     overflow: hidden;

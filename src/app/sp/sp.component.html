@@ -1,5 +1,5 @@
-<div id="sp">
-  <div id="value" [style.width]="player.sp + '%'">
+<div id="sp" [class.level-1]="player.sp >= 33" [class.level-2]="player.sp >= 66" [class.level-3]="player.sp >= 99">
+  <div id="value" [style.width]="15 + (.75 * (player.sp)) + '%'">
     <div id="fill"></div>
   </div>
   <div id="frame"></div>
