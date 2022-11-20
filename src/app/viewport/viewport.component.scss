@@ -19,10 +19,19 @@
   &.gameover {
     animation: gameover 3s linear;
     animation-fill-mode: forwards;
-    animation-delay: 1s;
+    animation-delay: .3s;
   }
 
   &.gameplay {
     background: rgba(0,0,4);
+  }
+}
+
+@keyframes gameover {
+  0% {
+    filter: grayscale(0) brightness(1);
+  }
+  100% {
+    filter: grayscale(1) brightness(.33);
   }
 }

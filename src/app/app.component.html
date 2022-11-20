@@ -1,3 +1,4 @@
 <app-viewport [class.gameplay]="game.stage === 'gameplay'" [class.hit]="game.hit" [class.gameover]="player.died"></app-viewport>
 
 <app-score *ngIf="game.stage === 'gameplay'"></app-score>
+<app-gameover *ngIf="player.died"></app-gameover>

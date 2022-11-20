@@ -29,7 +29,7 @@ export class TextComponent implements OnInit {
       let index = 0;
 
       const interval = setInterval(() => {
-        if (this.game.stage !== 'intro') {
+        if (this.game.stage !== 'intro' && this.game.stage !== 'gameplay') {
           return;
         }
 
