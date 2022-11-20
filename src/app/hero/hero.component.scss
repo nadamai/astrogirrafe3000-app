@@ -13,6 +13,28 @@
     top: 14vw;
     z-index: 15;
     filter: blur(11vw);
+    transition: opacitry .3s;
+  }
+
+  &.died {
+    animation: falling 5s ease-in;
+    animation-fill-mode: forwards;
+    transform: rotate(180deg) translateY(75%) !important;
+
+    &:after {
+      opacity: 0;
+    }
+
+    #giraffe {
+      transform-origin: 50% 50%;
+      animation: rotating 1s linear infinite;
+    }
+
+    #acceleration {
+      animation: none;
+      transition: transform .3s;
+      transform: scale(0);
+    }
   }
 
   #acceleration {
@@ -43,5 +65,23 @@
     transform: rotate(180deg) translate(-0.5vw, -25vw);
     position: relative;
     z-index: 5;
+  }
+
+  @keyframes rotating {
+    0% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(-180deg);
+    }
+  }
+
+  @keyframes falling {
+    0% {
+      top: 80vh;
+    }
+    100% {
+      top: 110vh;
+    }
   }
 }

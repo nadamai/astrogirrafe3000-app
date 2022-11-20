@@ -12,6 +12,10 @@
     opacity: 1;
   }
 
+  &.hit {
+    filter: invert(1);
+  }
+
   &.gameplay {
     background: rgba(0,0,4);
   }

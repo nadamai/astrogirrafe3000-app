@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { GameService } from './game.service';
 import { HelperService } from './helper.service';
 
 @Injectable({
@@ -13,6 +12,7 @@ export class PlayerService {
   public y: number = 110;
   public rotation: number = 0;
   public direction: number = 1;
+  public died: boolean = false;
 
   private animationInterval: number = 20;
   private moveFactor: number = 0.08;
