@@ -6,6 +6,8 @@ import { HelperService } from './helper.service';
 })
 
 export class PlayerService {
+  public size: number = 15;
+
   public x: number = 80;
   public y: number = 110;
   public rotation: number = 0;
@@ -29,7 +31,7 @@ export class PlayerService {
 
     const posX = this.x + (x * this.moveFactor);
 
-    if ((posX < (15 / -2)) || (posX > 100 + (15 / -2))) {
+    if ((posX < (this.size / -2)) || (posX > 100 + (this.size / -2))) {
       return;
     }
 

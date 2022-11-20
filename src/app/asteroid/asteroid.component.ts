@@ -1,5 +1,6 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-asteroid',
@@ -12,21 +13,43 @@ export class AsteroidComponent implements OnInit {
 
   public anticlockwise: boolean = true;
 
-  private y = -14;
+  private width: number = 14;
+  private x: number = 50;
+  private y: number = -14;
+  private harmless: boolean = false;
+  private safezone: number = 5;
+
   private routeInterval: any;
   private routeIntervalTime: number = 20;
 
   constructor(
-    private game: GameService
+    private game: GameService,
+    private player: PlayerService
   ) { }
 
   ngOnInit() {
-    this.left = (Math.random() * 87) + 'vw';
+    this.x = (Math.random() * 87);
+    this.left = this.x + 'vw';
     this.anticlockwise = Math.random() > .5;
 
     this.routeInterval = setInterval(() => {
       this.y += this.game.asteroidSpeed;
       this.top = this.y + 'vh';
+
+      if (this.harmless) {
+        return;
+      }
+
+      if ((this.y + this.width - this.safezone) >= this.player.y && (this.y + this.safezone <= this.player.y + this.player.size) &&
+        (
+          (this.x + this.safezone >= this.player.x && this.x <= this.player.x + this.player.size) ||
+          (this.x + this.width - this.safezone >= this.player.x && this.x + this.width <= this.player.x + this.player.size)
+        )
+      ) {
+        console.error('BUM');
+
+        this.harmless = true;
+      }
     }, this.routeIntervalTime);
   }
 }
