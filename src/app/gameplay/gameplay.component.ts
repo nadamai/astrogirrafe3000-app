@@ -10,13 +10,14 @@ import { HelperService } from '../helper.service';
 export class GameplayComponent implements OnInit {
   @HostBinding('class.active') active = false;
 
-  private delta: number = 100;
+  public asteroids: any[] = [];
 
   public starsTop: string = '-100vh';
   public stars2Top: string = '0';
   public starsTransition: string = 'top 2s linear';
   public stars2Transition: string = 'top 2s linear';
 
+  private delta: number = 100;
   private boostSpeedInterval: number = 10;
 
   constructor(
@@ -34,6 +35,8 @@ export class GameplayComponent implements OnInit {
     setInterval(() => {
       this.boostSpeed();
     }, this.boostSpeedInterval * 1000);
+
+    this.createAsteroid();
   }
 
   starsAnimation(): void {
@@ -65,5 +68,15 @@ export class GameplayComponent implements OnInit {
 
   boostSpeed() {
     this.game.starsSpeed *= .99;
+  }
+
+  createAsteroid() {
+    this.asteroids.push(1);
+
+    setTimeout(() => {
+      this.createAsteroid();
+
+      this.game.createAsteroidInterval *= .99;
+    }, this.game.createAsteroidInterval * 1000);
   }
 }

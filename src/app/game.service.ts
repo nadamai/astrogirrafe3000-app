@@ -11,6 +11,7 @@ export class GameService {
 
   public starsSpeed: number = 2;
   public asteroidSpeed: number = .2;
+  public createAsteroidInterval: number = 5;
 
   constructor(
     public player: PlayerService

@@ -1,5 +1,5 @@
 <div id="gameplay">
-  <app-asteroid></app-asteroid>
+  <app-asteroid *ngFor="let asteroid of asteroids"></app-asteroid>
 
   <div id="stars-1" class="stars" [style.transition]="starsTransition" [style.top]="starsTop">
     <app-star-gameplay *ngFor="let i of helper.range(100)"></app-star-gameplay>
