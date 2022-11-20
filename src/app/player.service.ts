@@ -18,7 +18,7 @@ export class PlayerService {
 
   private animationInterval: number = 20;
   private moveFactor: number = 0.06;
-  private extendFactor: number = 0.06;
+  private extendFactor: number = 0.02;
 
   constructor(
     private helpers: HelperService
@@ -55,7 +55,7 @@ export class PlayerService {
 
     const length = this.length + (-1 * y * this.extendFactor);
 
-    if (length < 0 || length > 50) {
+    if (length < 0 || length > 100) {
       return;
     }
 

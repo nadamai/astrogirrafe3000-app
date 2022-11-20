@@ -28,6 +28,7 @@
     #giraffe {
       transform-origin: 50% 50%;
       animation: rotating 1s linear infinite;
+      position: relative;
     }
 
     #acceleration {
@@ -60,11 +61,55 @@
   #giraffe {
     width: 15vw;
     height: 15vw;
-    background: url(~src/assets/img/giraffe.png) center center no-repeat;
-    background-size: contain;
     transform: rotate(180deg) translate(-0.5vw, -25vw);
     position: relative;
     z-index: 5;
+
+    .top {
+      width: 100%;
+      height: 3.5vw;
+      background-size: contain;
+      position: absolute;
+      top: -0.5vw;
+
+      .image {
+        width: 15vw;
+        height: 15vw;
+        background: url(~src/assets/img/giraffe-top.png) bottom center repeat-y;
+        background-size: contain;
+      }
+    }
+
+    .middle {
+      width: 100%;
+      height: 4.7vw;
+      position: absolute;
+      bottom: 7.4vw;
+      overflow: hidden;
+
+      .image {
+        width: 15vw;
+        height: 100%;
+        background: url(~src/assets/img/giraffe-neck.png) center center repeat-y;
+        background-size: contain;
+      }
+    }
+
+    .bottom {
+      width: 100%;
+      height: 7.45vw;
+      position: absolute;
+      overflow: hidden;
+      bottom: 0;
+
+      .image {
+        width: 15vw;
+        height: 15vw;
+        background: url(~src/assets/img/giraffe-bottom.png) top center no-repeat;
+        background-size: contain;
+        transform: translateY(-7.55vw);
+      }
+    }
   }
 
   @keyframes rotating {
