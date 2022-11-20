@@ -6,12 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gameover.component.scss']
 })
 export class GameoverComponent implements OnInit {
-  constructor() { }
+  public restart: boolean = false;
 
   ngOnInit() {
+    setTimeout(() => {
+      this.restart = true;
+    }, 6000);
   }
 
-  restart() {
+  reload() {
     window.location.reload();
   }
 }

@@ -31,14 +31,12 @@ export class TextComponent implements OnInit, OnDestroy {
       let index = 0;
 
       this.textInterval = setInterval(() => {
-        console.log('interval');
         if (this.game.stage !== 'intro' && this.game.stage !== 'gameplay') {
           return;
         }
 
         if (typeof this.value[index] === 'undefined') {
           if (!this.visible) {
-            console.error('RETURN');
             return;
           }
 

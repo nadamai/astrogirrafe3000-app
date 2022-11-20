@@ -18,4 +18,14 @@
       color: rgba(0,212,255,1);
     }
   }
+
+  .cta {
+    opacity: 0;
+    transition: opacity 1s;
+    margin-top: 32px;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
 }
