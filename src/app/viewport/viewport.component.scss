@@ -16,6 +16,12 @@
     filter: invert(1);
   }
 
+  &.gameover {
+    animation: gameover 3s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+  }
+
   &.gameplay {
     background: rgba(0,0,4);
   }

@@ -42,6 +42,7 @@ export class GameService {
 
   over() {
     this.hit = true;
+    this.controls = false;
     this.player.died = true;
 
     setTimeout(() => {

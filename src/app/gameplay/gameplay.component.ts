@@ -1,6 +1,7 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
 import { HelperService } from '../helper.service';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-gameplay',
@@ -22,7 +23,8 @@ export class GameplayComponent implements OnInit {
 
   constructor(
     public game: GameService,
-    public helper: HelperService
+    public helper: HelperService,
+    public player: PlayerService
   ) { }
 
   ngOnInit() {

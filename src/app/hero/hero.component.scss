@@ -17,7 +17,7 @@
   }
 
   &.died {
-    animation: falling 5s ease-in;
+    animation: falling 6s ease-in;
     animation-fill-mode: forwards;
     transform: rotate(180deg) translateY(75%) !important;
 
