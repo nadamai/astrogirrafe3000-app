@@ -29,7 +29,7 @@ export class PlayerService {
         return;
       }
 
-      this.sp += 1; // TODO (Math.max(0, .5 * ((this.length / 30) - .8)));
+      this.sp += Math.max(0, .5 * ((this.length / 30) - .8));
     }, 100);
   }
 

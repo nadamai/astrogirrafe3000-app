@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
 import { PlayerService } from '../player.service';
 
@@ -7,7 +7,7 @@ import { PlayerService } from '../player.service';
   templateUrl: './asteroid.component.html',
   styleUrls: ['./asteroid.component.scss']
 })
-export class AsteroidComponent implements OnInit {
+export class AsteroidComponent implements OnInit, OnDestroy {
   @HostBinding('style.top') top: string = '-14vh';
   @HostBinding('style.left') left: string = '50vw';
 
@@ -52,5 +52,9 @@ export class AsteroidComponent implements OnInit {
         this.harmless = true;
       }
     }, this.routeIntervalTime);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.routeInterval);
   }
 }

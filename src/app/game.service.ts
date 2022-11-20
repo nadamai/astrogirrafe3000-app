@@ -98,6 +98,8 @@ export class GameService {
     setTimeout(() => {
       this.beam = false;
       this.player.sp = 0;
-    }, 500);
+
+      this.asteroids = [];
+    }, 1000);
   }
 }

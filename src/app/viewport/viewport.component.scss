@@ -16,6 +16,11 @@
     filter: invert(1);
   }
 
+  &.beam {
+    animation-delay: 1s;
+    animation: beam 1s;
+  }
+
   &.gameover {
     animation: gameover 3s linear;
     animation-fill-mode: forwards;
@@ -33,5 +38,26 @@
   }
   100% {
     filter: grayscale(1) brightness(.33);
+  }
+}
+
+@keyframes beam {
+  0%, 20%, 41%, 60%, 81% {
+    filter: invert(0);
+  }
+  21%, 40%, 61%, 80% {
+    filter: invert(1);
+  }
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
   }
 }
