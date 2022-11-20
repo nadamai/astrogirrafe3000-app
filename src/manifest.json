@@ -3,6 +3,7 @@
   "name": "ASTRO GIRAFFE 3000",
   "start_url": "/",
   "display": "standalone",
+  "theme_color": "#000004",
   "scope": "/",
   "icons": [
     {
