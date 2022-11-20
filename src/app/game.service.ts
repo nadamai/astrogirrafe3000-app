@@ -6,7 +6,7 @@ import { PlayerService } from './player.service';
 })
 
 export class GameService {
-  public stage: string = 'intro'; // TODO: intro
+  public stage: string = 'intro';
   public controls: boolean = false;
 
   public highestScore: number|null = null;
@@ -22,11 +22,17 @@ export class GameService {
     public player: PlayerService,
     public game: GameService
   ) {
+    this.highestScore = localStorage.getItem('highest_score') ? parseInt(localStorage.getItem('highest_score')) : null;
+
+    if (!!localStorage.getItem('start_with_gameplay')) {
+      this.stage = 'gameplay';
+
+      localStorage.removeItem('start_with_gameplay')
+    }
+
     if (this.stage === 'gameplay') {
       this.play();
     }
-
-    this.highestScore = localStorage.getItem('highest_score') ? parseInt(localStorage.getItem('highest_score')) : null;
   }
 
   play() {

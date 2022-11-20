@@ -24,6 +24,8 @@ export class GameoverComponent implements OnInit {
   }
 
   reload() {
+    localStorage.setItem('start_with_gameplay', '1');
+
     window.location.reload();
   }
 }
