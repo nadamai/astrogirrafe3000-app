@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="AstroGiraffe3000" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
-    <description>Sample Apache Cordova App</description>
-    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
-        Apache Cordova Team
+<widget id="pl.hackyeah.govtechgamejam.giraffe.astrogiraffe3000" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>AstroGiraffe3000</name>
+    <description></description>
+    <author email="dan@digitibox.pl" href="https://digitibox.pl">
+        Daniel Stasiak
     </author>
     <content src="index.html" />
     <allow-intent href="http://*/*" />
