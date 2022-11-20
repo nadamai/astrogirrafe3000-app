@@ -13,5 +13,9 @@ export class AppComponent {
   constructor(
     public game: GameService,
     public player: PlayerService
-  ) { }
+  ) {
+    document.ondblclick = (e) => {
+      e.preventDefault();
+    }
+  }
 }
