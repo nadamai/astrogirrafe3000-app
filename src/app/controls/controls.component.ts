@@ -18,6 +18,7 @@ export class ControlsComponent implements OnInit {
   public joystickY: number = 0;
 
   private lastX?: number = undefined;
+  private lastY?: number = undefined;
 
   private moveInterval: any;
   private moveIntervalTime: number = 20;
@@ -40,6 +41,7 @@ export class ControlsComponent implements OnInit {
 
     this.moveInterval = setInterval(() => {
       this.player.moveX(this.lastX);
+      this.player.moveY(this.lastY);
     }, this.moveIntervalTime)
   }
 
@@ -55,6 +57,7 @@ export class ControlsComponent implements OnInit {
     const joystickY = -1 * (this.touchStartY - y);
 
     this.lastX = joystickX;
+    this.lastY = joystickY;
 
     if (Math.sqrt(Math.pow(joystickX, 2) + Math.pow(joystickY, 2)) > radius) {
       const controlsCenterX = controls.offsetLeft + (controls.offsetWidth / 2);
@@ -97,6 +100,8 @@ export class ControlsComponent implements OnInit {
 
     this.joystickX = joystickX;
     this.joystickY = joystickY;
+
+    console.log();
   }
 
   touchend(e) {

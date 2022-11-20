@@ -7,6 +7,7 @@ import { HelperService } from './helper.service';
 
 export class PlayerService {
   public hp: number = 3;
+  public length: number = 0;
 
   public size: number = 15;
   public x: number = 80;
@@ -17,6 +18,7 @@ export class PlayerService {
 
   private animationInterval: number = 20;
   private moveFactor: number = 0.06;
+  private extendFactor: number = 0.06;
 
   constructor(
     private helpers: HelperService
@@ -44,6 +46,20 @@ export class PlayerService {
     }
 
     this.x = posX;
+  }
+
+  moveY(y) {
+    if (typeof y === 'undefined') {
+      return;
+    }
+
+    const length = this.length + (-1 * y * this.extendFactor);
+
+    if (length < 0 || length > 50) {
+      return;
+    }
+
+    this.length = length;
   }
 
   moveTo(newX, newY, time, callback) {
