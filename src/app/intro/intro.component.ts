@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, HostBinding, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
+import { HelperService } from '../helper.service';
 import { PlayerService } from '../player.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class IntroComponent implements OnInit {
 
   constructor(
     public player: PlayerService,
-    public game: GameService
+    public game: GameService,
+    public helper: HelperService
   ) { }
 
   ngOnInit() {

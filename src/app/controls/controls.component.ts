@@ -37,7 +37,6 @@ export class ControlsComponent implements OnInit {
   touchstart(e) {
     this.touchStartX = e.touches[0].clientX;
     this.touchStartY = e.touches[0].clientY;
-    console.error('TOUCHSTART');
 
     this.moveInterval = setInterval(() => {
       this.player.moveX(this.lastX);

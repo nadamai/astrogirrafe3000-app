@@ -8,5 +8,8 @@ https://www.flaticon.com/free-icon/giraffe_2395826?term=giraffe&page=1&position=
 ### Fire/acceleration
 https://www.flaticon.com/free-icon/fire_477257?related_id=477257&origin=search
 
-## Giraffe on title screen
+### Giraffe on title screen
 https://freesvg.org/1526976510
+
+### Asteroids
+https://www.flaticon.com/free-icon/asteroid_2530826

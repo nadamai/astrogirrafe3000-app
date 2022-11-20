@@ -1,5 +1,4 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { GameService } from '../game.service';
 import { HelperService } from '../helper.service';
 
 @Component({
@@ -18,8 +17,9 @@ export class GameplayComponent implements OnInit {
   public starsTransition: string = 'top 2s linear';
   public stars2Transition: string = 'top 2s linear';
 
+  private boostSpeedInterval: number = 10;
+
   constructor(
-    public game: GameService,
     public helper: HelperService
   ) { }
 
@@ -29,6 +29,10 @@ export class GameplayComponent implements OnInit {
 
       this.starsAnimation();
     }, 50);
+
+    setInterval(() => {
+      this.boostSpeed();
+    }, this.boostSpeedInterval * 1000);
   }
 
   starsAnimation(): void {
@@ -56,13 +60,9 @@ export class GameplayComponent implements OnInit {
         }, this.delta);
       }, this.starsSpeed * 1000)
     }, this.delta);
+  }
 
-
-
-    setTimeout(() => {
-      console.error('speedchange');
-
-      this.starsSpeed = 1.9
-    }, 5000);
+  boostSpeed() {
+    this.starsSpeed *= .99;
   }
 }
