@@ -8,7 +8,11 @@
 
     <img src="assets/img/title.svg">
 
-    <div class="cta play-now" (click)="play()">PLAY NOW</div>
+    <div class="bottom">
+      <div class="record" *ngIf="game.highestScore">highest score: {{ game.highestScore }}</div>
+
+      <div class="cta play-now" (click)="play()">PLAY NOW</div>
+    </div>
   </div>
 
   <app-star-moving *ngFor="let i of helper.range(400); let index = index" [index]="index"></app-star-moving>

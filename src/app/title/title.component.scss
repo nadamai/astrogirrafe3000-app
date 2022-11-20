@@ -13,7 +13,7 @@
       opacity: 0;
     }
 
-    .cta {
+    .bottom {
       transform: translateX(100vw);
     }
   }
@@ -66,6 +66,24 @@
       right: -5.5vw;
       pointer-events: none;
       transition: opacity .5s;
+    }
+  }
+
+  .bottom {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    transition: transform .5s;
+
+    .record {
+      width: 100%;
+      position: absolute;
+      bottom: calc(100% + 16px);
+      color: rgba(0,212,255,1);
+    }
+
+    .cta {
+      display: inline-flex;
     }
   }
 }

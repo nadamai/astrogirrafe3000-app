@@ -6,7 +6,7 @@ import { PlayerService } from './player.service';
 })
 
 export class GameService {
-  public stage: string = 'gameplay'; // TODO: intro
+  public stage: string = 'intro'; // TODO: intro
   public controls: boolean = false;
 
   public highestScore: number|null = null;
