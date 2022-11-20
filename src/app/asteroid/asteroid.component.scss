@@ -8,15 +8,28 @@
     background: url(~src/assets/img/asteroid.png) center center no-repeat;
     background-size: contain;
     position: relative;
-    animation: asteroid 3s linear infinite;
+    animation: asteroid-clockwise 3s linear infinite;
+
+    &.anticlockwise {
+      animation: asteroid-anticlockwise 3s linear infinite;
+    }
   }
 
-  @keyframes asteroid {
+  @keyframes asteroid-clockwise {
     0% {
       transform: rotate(0);
     }
     100% {
       transform: rotate(360deg);
+    }
+  }
+
+  @keyframes asteroid-anticlockwise {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(-360deg);
     }
   }
 }

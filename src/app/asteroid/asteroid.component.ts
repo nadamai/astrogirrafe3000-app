@@ -10,8 +10,9 @@ export class AsteroidComponent implements OnInit {
   @HostBinding('style.top') top: string = '-14vh';
   @HostBinding('style.left') left: string = '50vw';
 
-  private y = -14;
+  public anticlockwise: boolean = true;
 
+  private y = -14;
   private routeInterval: any;
   private routeIntervalTime: number = 20;
 
@@ -21,6 +22,7 @@ export class AsteroidComponent implements OnInit {
 
   ngOnInit() {
     this.left = (Math.random() * 87) + 'vw';
+    this.anticlockwise = Math.random() > .5;
 
     this.routeInterval = setInterval(() => {
       this.y += this.game.asteroidSpeed;
