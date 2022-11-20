@@ -9,6 +9,9 @@ export class GameService {
   public stage: string = 'gameplay'; // TODO: intro
   public controls: boolean = false;
 
+  public starsSpeed: number = 2;
+  public asteroidSpeed: number = .2;
+
   constructor(
     public player: PlayerService
   ) {

@@ -1,4 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
 import { HelperService } from '../helper.service';
 
 @Component({
@@ -9,7 +10,6 @@ import { HelperService } from '../helper.service';
 export class GameplayComponent implements OnInit {
   @HostBinding('class.active') active = false;
 
-  public starsSpeed: number = 2;
   private delta: number = 100;
 
   public starsTop: string = '-100vh';
@@ -20,6 +20,7 @@ export class GameplayComponent implements OnInit {
   private boostSpeedInterval: number = 10;
 
   constructor(
+    public game: GameService,
     public helper: HelperService
   ) { }
 
@@ -41,7 +42,7 @@ export class GameplayComponent implements OnInit {
     this.stars2Top = '0';
 
     setTimeout(() => {
-      this.starsTransition = 'top ' + this.starsSpeed + 's linear';
+      this.starsTransition = 'top ' + this.game.starsSpeed + 's linear';
       this.starsTop = '0';
       this.stars2Top = '100vh';
 
@@ -51,18 +52,18 @@ export class GameplayComponent implements OnInit {
         this.starsTop = '100vh';
 
         setTimeout(() => {
-          this.stars2Transition = 'top ' + this.starsSpeed + 's linear';
+          this.stars2Transition = 'top ' + this.game.starsSpeed + 's linear';
           this.stars2Top = '0';
 
           setTimeout(() => {
             this.starsAnimation();
-          }, (this.starsSpeed * 1000) - this.delta)
+          }, (this.game.starsSpeed * 1000) - this.delta)
         }, this.delta);
-      }, this.starsSpeed * 1000)
+      }, this.game.starsSpeed * 1000)
     }, this.delta);
   }
 
   boostSpeed() {
-    this.starsSpeed *= .99;
+    this.game.starsSpeed *= .99;
   }
 }

@@ -14,6 +14,7 @@ import { GameplayComponent } from './gameplay/gameplay.component';
 import { StarGameplayComponent } from './star-gameplay/star-gameplay.component';
 import { ControlsComponent } from './controls/controls.component';
 import { JoystickComponent } from './joystick/joystick.component';
+import { AsteroidComponent } from './asteroid/asteroid.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { JoystickComponent } from './joystick/joystick.component';
     GameplayComponent,
     StarGameplayComponent,
     ControlsComponent,
-    JoystickComponent
+    JoystickComponent,
+    AsteroidComponent
   ],
   imports: [
     BrowserModule,

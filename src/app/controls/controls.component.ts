@@ -110,6 +110,8 @@ export class ControlsComponent implements OnInit {
   private cancelMove() {
     clearInterval(this.moveInterval);
 
+    this.lastX = 0;
+
     this.touchStartX = undefined;
     this.touchStartY = undefined;
 
