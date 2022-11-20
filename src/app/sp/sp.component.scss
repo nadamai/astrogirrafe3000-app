@@ -49,6 +49,11 @@
       bottom: 10vw;
       opacity: .6;
     }
+
+    #frame {
+      animation: pulse 1s infinite;
+      filter: invert(1);
+    }
   }
 
   #value {
@@ -72,5 +77,16 @@
     right: 5vw;
     bottom: 5vw;
     z-index: 22;
+    filter: invert(0);
+    transition: filter .8s;
+  }
+}
+
+@keyframes pulse {
+  0%, 50%, 70%, 80%, 100% {
+    transform: scale(1);
+  }
+  60%, 90% {
+    transform: scale(1.1);
   }
 }
