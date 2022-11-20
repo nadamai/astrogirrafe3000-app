@@ -55,6 +55,8 @@ export class GameService {
     this.controls = false;
     this.player.died = true;
 
+    // TODO: save highest score
+
     clearInterval(this.scoreInterval);
 
     setTimeout(() => {

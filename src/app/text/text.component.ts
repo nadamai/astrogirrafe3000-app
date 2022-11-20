@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnDestroy, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
 
 @Component({
@@ -6,15 +6,17 @@ import { GameService } from '../game.service';
   templateUrl: './text.component.html',
   styleUrls: ['./text.component.scss']
 })
-export class TextComponent implements OnInit {
+export class TextComponent implements OnInit, OnDestroy {
   @HostBinding('class.finished') finished: boolean = false;
 
   @Input() value: string = '';
   @Input() delay: number = 0;
-  @Input() visible: number = 2;
+  @Input() visible: number = 0;
   @Input() interval: number = 80;
 
   public text: string = '';
+
+  private textInterval: any;
 
   constructor(
     public game: GameService
@@ -28,13 +30,19 @@ export class TextComponent implements OnInit {
     setTimeout(() => {
       let index = 0;
 
-      const interval = setInterval(() => {
+      this.textInterval = setInterval(() => {
+        console.log('interval');
         if (this.game.stage !== 'intro' && this.game.stage !== 'gameplay') {
           return;
         }
 
         if (typeof this.value[index] === 'undefined') {
-          clearInterval(interval);
+          if (!this.visible) {
+            console.error('RETURN');
+            return;
+          }
+
+          clearInterval(this.textInterval);
 
           setTimeout(() => {
             this.finished = true;
@@ -50,5 +58,9 @@ export class TextComponent implements OnInit {
         index++;
       }, this.interval);
     }, this.delay * 1000);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.textInterval);
   }
 }

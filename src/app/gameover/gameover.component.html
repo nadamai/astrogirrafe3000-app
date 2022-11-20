@@ -1,6 +1,12 @@
 <div id="gameover">
   <app-text value="The giraffe has fallen..."
             delay="2"
-            visible="10"
   ></app-text>
+
+  <app-text class="record" value="...but it was the highest score! The giraffe has died with smile on her face."
+            delay="6"
+            interval="60"
+  ></app-text>
+
+  <div class="cta" (click)="restart()">RESTART</div>
 </div>

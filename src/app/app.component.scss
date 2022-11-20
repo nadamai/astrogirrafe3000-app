@@ -1,0 +1,26 @@
+::ng-deep .cta {
+  font-weight: 800;
+  background-color: #f6b953;
+  height: 48px;
+  border-radius: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10vw;
+  z-index: 10;
+  transition: transform .5s;
+
+  &.play-now {
+    animation: play-now 1s infinite;
+  }
+
+  @keyframes play-now {
+    0%, 50% {
+      color: #fff;
+    }
+
+    51%, 100% {
+      color: transparent;
+    }
+  }
+}

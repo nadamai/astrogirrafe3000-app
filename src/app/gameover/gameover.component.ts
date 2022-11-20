@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-gameover',
@@ -9,5 +9,9 @@ export class GameoverComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  restart() {
+    window.location.reload();
   }
 }

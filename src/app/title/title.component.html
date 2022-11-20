@@ -8,7 +8,7 @@
 
     <img src="assets/img/title.svg">
 
-    <div class="cta" (click)="play()">PLAY NOW</div>
+    <div class="cta play-now" (click)="play()">PLAY NOW</div>
   </div>
 
   <app-star-moving *ngFor="let i of helper.range(400); let index = index" [index]="index"></app-star-moving>

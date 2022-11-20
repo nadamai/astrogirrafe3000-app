@@ -2,9 +2,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5vw;
   position: fixed;
+  flex-direction: column;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+
+  app-text {
+    text-align: center;
+    margin-bottom: 16px;
+
+    &.record {
+      color: rgba(0,212,255,1);
+    }
+  }
 }
