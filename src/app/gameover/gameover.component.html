@@ -3,7 +3,8 @@
             delay="2"
   ></app-text>
 
-  <app-text class="record" value="...but it was the highest score! The giraffe has died with smile on its face."
+  <app-text class="record" *ngIf="isHighestScore()"
+            value="...but it was the highest score! The giraffe has died with smile on its face."
             delay="6"
             interval="60"
   ></app-text>

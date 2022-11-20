@@ -9,6 +9,7 @@ export class GameService {
   public stage: string = 'gameplay'; // TODO: intro
   public controls: boolean = false;
 
+  public highestScore: number|null = null;
   public score: number = 0;
   public hit: boolean = false;
   public starsSpeed: number = 2;
@@ -18,11 +19,14 @@ export class GameService {
   private scoreInterval: any;
 
   constructor(
-    public player: PlayerService
+    public player: PlayerService,
+    public game: GameService
   ) {
     if (this.stage === 'gameplay') {
       this.play();
     }
+
+    this.highestScore = localStorage.getItem('highest_score') ? parseInt(localStorage.getItem('highest_score')) : null;
   }
 
   play() {
@@ -55,7 +59,11 @@ export class GameService {
     this.controls = false;
     this.player.died = true;
 
-    // TODO: save highest score
+    setTimeout(() => {
+      if (!this.highestScore || this.score > this.highestScore) {
+        localStorage.setItem('highest_score', this.score.toString())
+      }
+    }, 1000);
 
     clearInterval(this.scoreInterval);
 
