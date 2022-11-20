@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { SafeStyle } from '@angular/platform-browser';
 
 @Component({
@@ -10,4 +10,6 @@ export class HeroComponent {
   @HostBinding('style.top') @Input() top: string;
   @HostBinding('style.left') @Input() left: string;
   @HostBinding('style.transform') @Input() transform: SafeStyle;
+
+  @Input() length: number = 0;
 }

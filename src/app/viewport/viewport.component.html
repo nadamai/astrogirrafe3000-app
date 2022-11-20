@@ -1,4 +1,7 @@
-<app-hero [left]="player.x + 'vw'" [top]="player.y + 'vh'" [transform]="getHeroTransform()"
+<app-hero [left]="player.x + 'vw'"
+          [top]="player.y + 'vh'"
+          [transform]="getHeroTransform()"
+          [length]="player.length"
           [class.died]="player.died"
           *ngIf="game.stage !== 'title'"
 ></app-hero>
