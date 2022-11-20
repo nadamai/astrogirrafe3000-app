@@ -80,7 +80,7 @@ export class GameplayComponent implements OnInit {
     setTimeout(() => {
       this.createAsteroid();
 
-      this.game.createAsteroidInterval *= .95;
+      this.game.createAsteroidInterval *= .9;
     }, this.game.createAsteroidInterval * 1000);
   }
 }
