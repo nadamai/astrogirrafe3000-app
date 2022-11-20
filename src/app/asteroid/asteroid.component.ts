@@ -46,8 +46,7 @@ export class AsteroidComponent implements OnInit {
           (this.x + this.width - this.safezone >= this.player.x && this.x + this.width <= this.player.x + this.player.size)
         )
       ) {
-        console.error('BUM');
-
+        this.game.over();
         this.harmless = true;
       }
     }, this.routeIntervalTime);

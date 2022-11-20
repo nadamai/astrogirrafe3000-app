@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { GameService } from './game.service';
 import { HelperService } from './helper.service';
 
 @Injectable({
@@ -44,7 +45,7 @@ export class PlayerService {
     this.x = posX;
   }
 
-  public moveTo(newX, newY, time, callback) {
+  moveTo(newX, newY, time, callback) {
     let progress = 0;
 
     const oldX = this.x;

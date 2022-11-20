@@ -36,7 +36,9 @@ export class GameplayComponent implements OnInit {
       this.boostSpeed();
     }, this.boostSpeedInterval * 1000);
 
-    this.createAsteroid();
+    setTimeout(() => {
+      this.createAsteroid();
+    }, 5000)
   }
 
   starsAnimation(): void {
