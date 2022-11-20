@@ -2,7 +2,7 @@
   "short_name": "ASTRO GIRAFFE 3000",
   "name": "ASTRO GIRAFFE 3000",
   "start_url": "/",
-  "display": "fullscreen",
+  "display": "standalone",
   "scope": "/",
   "icons": [
     {
