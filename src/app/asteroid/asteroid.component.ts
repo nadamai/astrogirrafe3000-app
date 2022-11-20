@@ -40,7 +40,7 @@ export class AsteroidComponent implements OnInit {
         return;
       }
 
-      if ((this.y + this.width - this.safezone) >= this.player.y && (this.y + this.safezone <= this.player.y + this.player.size) &&
+      if ((this.y + this.width - this.safezone) >= this.player.y && (this.y + 2.5*this.safezone <= this.player.y + this.player.size) &&
         (
           (this.x + this.safezone >= this.player.x && this.x <= this.player.x + this.player.size) ||
           (this.x + this.width - this.safezone >= this.player.x && this.x + this.width <= this.player.x + this.player.size)

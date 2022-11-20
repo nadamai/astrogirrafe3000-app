@@ -16,7 +16,7 @@ export class PlayerService {
   public died: boolean = false;
 
   private animationInterval: number = 20;
-  private moveFactor: number = 0.08;
+  private moveFactor: number = 0.06;
 
   constructor(
     private helpers: HelperService
