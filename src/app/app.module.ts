@@ -18,6 +18,7 @@ import { AsteroidComponent } from './asteroid/asteroid.component';
 import { ScoreComponent } from './score/score.component';
 import { GameoverComponent } from './gameover/gameover.component';
 import { HpComponent } from './hp/hp.component';
+import { SpComponent } from './sp/sp.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HpComponent } from './hp/hp.component';
     AsteroidComponent,
     ScoreComponent,
     GameoverComponent,
-    HpComponent
+    HpComponent,
+    SpComponent
   ],
   imports: [
     BrowserModule,

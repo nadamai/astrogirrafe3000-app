@@ -16,3 +16,6 @@ https://www.flaticon.com/free-icon/asteroid_2530826
 
 ### Heart
 https://www.flaticon.com/free-icon/heart_508735
+
+### Thunders
+https://www.flaticon.com/free-icon/thunder_4761181
