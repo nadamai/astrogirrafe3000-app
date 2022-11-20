@@ -12,6 +12,7 @@ export class PlayerService {
   public direction: number = 1;
 
   private animationInterval: number = 20;
+  private moveFactor: number = 0.05;
 
   constructor(
     private helpers: HelperService
@@ -19,6 +20,22 @@ export class PlayerService {
 
   public face(direction) {
     this.direction = (direction === 'right') ? 1 : -1;
+  }
+
+  moveX(x) {
+    const posX = this.x + (x * this.moveFactor);
+
+    if ((posX < (15 / -2)) || (posX > 100 + (15 / -2))) {
+      return;
+    }
+
+    if (x > 0) {
+      this.face('right');
+    } else {
+      this.face('left');
+    }
+
+    this.x = posX;
   }
 
   public moveTo(newX, newY, time, callback) {

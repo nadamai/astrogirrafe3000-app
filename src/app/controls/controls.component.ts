@@ -1,6 +1,7 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HelperService } from '../helper.service';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-controls',
@@ -18,6 +19,7 @@ export class ControlsComponent implements OnInit {
 
   constructor(
     public sanitizer: DomSanitizer,
+    private player: PlayerService,
     private helper: HelperService
   ) {};
 
@@ -42,6 +44,8 @@ export class ControlsComponent implements OnInit {
     const radius = (controls.offsetHeight - (joystick).offsetHeight) / 2;
     const joystickX = -1 * (this.touchStartX - x);
     const joystickY = -1 * (this.touchStartY - y);
+
+    this.player.moveX(joystickX);
 
     if (Math.sqrt(Math.pow(joystickX, 2) + Math.pow(joystickY, 2)) > radius) {
       const controlsCenterX = controls.offsetLeft + (controls.offsetWidth / 2);
