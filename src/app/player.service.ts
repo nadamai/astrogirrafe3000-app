@@ -12,7 +12,7 @@ export class PlayerService {
   public direction: number = 1;
 
   private animationInterval: number = 20;
-  private moveFactor: number = 0.05;
+  private moveFactor: number = 0.08;
 
   constructor(
     private helpers: HelperService
@@ -23,6 +23,10 @@ export class PlayerService {
   }
 
   moveX(x) {
+    if (typeof x === 'undefined') {
+      return;
+    }
+
     const posX = this.x + (x * this.moveFactor);
 
     if ((posX < (15 / -2)) || (posX > 100 + (15 / -2))) {

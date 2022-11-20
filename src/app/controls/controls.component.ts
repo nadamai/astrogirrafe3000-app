@@ -17,6 +17,11 @@ export class ControlsComponent implements OnInit {
   public joystickX: number = 0;
   public joystickY: number = 0;
 
+  private lastX?: number = undefined;
+
+  private moveInterval: any;
+  private moveIntervalTime: number = 20;
+
   constructor(
     public sanitizer: DomSanitizer,
     private player: PlayerService,
@@ -32,6 +37,11 @@ export class ControlsComponent implements OnInit {
   touchstart(e) {
     this.touchStartX = e.touches[0].clientX;
     this.touchStartY = e.touches[0].clientY;
+    console.error('TOUCHSTART');
+
+    this.moveInterval = setInterval(() => {
+      this.player.moveX(this.lastX);
+    }, this.moveIntervalTime)
   }
 
   touchmove(e) {
@@ -45,7 +55,7 @@ export class ControlsComponent implements OnInit {
     const joystickX = -1 * (this.touchStartX - x);
     const joystickY = -1 * (this.touchStartY - y);
 
-    this.player.moveX(joystickX);
+    this.lastX = joystickX;
 
     if (Math.sqrt(Math.pow(joystickX, 2) + Math.pow(joystickY, 2)) > radius) {
       const controlsCenterX = controls.offsetLeft + (controls.offsetWidth / 2);
@@ -53,6 +63,7 @@ export class ControlsComponent implements OnInit {
 
       if (controlsCenterX === x) {
         this.joystickX = x;
+        this.lastX = 0;
 
         if (y < controlsCenterY) {
           this.joystickY = controlsCenterY - radius;
@@ -90,14 +101,16 @@ export class ControlsComponent implements OnInit {
   }
 
   touchend(e) {
-    this.touchStartX = undefined;
-    this.touchStartY = undefined;
-
-    this.joystickX = 0;
-    this.joystickY = 0;
+    this.cancelMove();
   }
 
   touchcancel(e) {
+    this.cancelMove();
+  }
+
+  private cancelMove() {
+    clearInterval(this.moveInterval);
+
     this.touchStartX = undefined;
     this.touchStartY = undefined;
 
