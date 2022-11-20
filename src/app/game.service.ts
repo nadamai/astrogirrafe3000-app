@@ -70,7 +70,7 @@ export class GameService {
 
     setTimeout(() => {
       this.hit = false;
-    }, 200);
+    }, 150);
   }
 
   over() {
