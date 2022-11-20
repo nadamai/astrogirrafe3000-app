@@ -1,0 +1,15 @@
+:host {
+  #score {
+    position: fixed;
+    top: 5vw;
+    left: 5vw;
+    color: rgba(0,212,255,1);
+    transition: top 3s, opacity 2s;
+    z-index: 30;
+
+    &.skip {
+      top: -5vh;
+      opacity: 0;
+    }
+  }
+}

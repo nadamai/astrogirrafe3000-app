@@ -15,6 +15,8 @@ import { StarGameplayComponent } from './star-gameplay/star-gameplay.component';
 import { ControlsComponent } from './controls/controls.component';
 import { JoystickComponent } from './joystick/joystick.component';
 import { AsteroidComponent } from './asteroid/asteroid.component';
+import { ScoreComponent } from './score/score.component';
+import { GameoverComponent } from './gameover/gameover.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { AsteroidComponent } from './asteroid/asteroid.component';
     StarGameplayComponent,
     ControlsComponent,
     JoystickComponent,
-    AsteroidComponent
+    AsteroidComponent,
+    ScoreComponent,
+    GameoverComponent
   ],
   imports: [
     BrowserModule,
