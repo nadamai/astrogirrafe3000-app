@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-hp',
@@ -8,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class HpComponent implements OnInit {
   public visible: number = 0;
 
-  constructor() { }
+  constructor(
+    public player: PlayerService
+  ) { }
 
   ngOnInit() {
     setTimeout(() => {

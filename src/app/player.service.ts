@@ -6,8 +6,9 @@ import { HelperService } from './helper.service';
 })
 
 export class PlayerService {
-  public size: number = 15;
+  public hp: number = 3;
 
+  public size: number = 15;
   public x: number = 80;
   public y: number = 110;
   public rotation: number = 0;

@@ -60,8 +60,20 @@ export class GameService {
     }, 100);
   }
 
-  over() {
+  harm() {
     this.hit = true;
+    this.player.hp--;
+
+    if (!this.player.hp) {
+      this.over();
+    }
+
+    setTimeout(() => {
+      this.hit = false;
+    }, 200);
+  }
+
+  over() {
     this.controls = false;
     this.player.died = true;
 
@@ -72,9 +84,5 @@ export class GameService {
     }, 1000);
 
     clearInterval(this.scoreInterval);
-
-    setTimeout(() => {
-      this.hit = false;
-    }, 200);
   }
 }
