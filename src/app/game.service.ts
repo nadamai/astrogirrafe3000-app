@@ -24,7 +24,7 @@ export class GameService {
     this.player.y = 110;
     this.player.rotation = 180;
 
-    this.player.moveTo(this.player.x, 80, 1, () => { // TODO: 1 => 5000
+    this.player.moveTo(this.player.x, 80, 5000, () => { // TODO: 1 => 5000
       setTimeout(() => {
         this.showControls();
       }, 200);
