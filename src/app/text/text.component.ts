@@ -51,7 +51,9 @@ export class TextComponent implements OnInit, OnDestroy {
 
         const letter = document.querySelector('app-text[value="' + this.value + '"] span.letter:nth-child(' + (index + 1) + ')');
 
-        letter.classList.add('visible');
+        if (letter) {
+          letter.classList.add('visible');
+        }
 
         index++;
       }, this.interval);
